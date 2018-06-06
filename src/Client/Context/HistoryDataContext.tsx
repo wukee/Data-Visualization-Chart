@@ -118,18 +118,18 @@ export class HisDataContextProvider extends React.PureComponent<any,IHisDataCont
                            const chartDataArray=draftState.paramMap.get(item.参数名称).get(item.任务代号);
                            if (insertIndex>0){
                                const tempArray=chartDataArray.splice(0,insertIndex);
-                               draftState.paramMap.get(item.参数名称).set(item.任务代号,[...tempArray,[new Date('item.测量时间'),item.参数值],...chartDataArray])
+                               draftState.paramMap.get(item.参数名称).set(item.任务代号,[...tempArray,[new Date(item.测量时间),item.参数值],...chartDataArray])
                            }else if(insertIndex==0){
-                               draftState.paramMap.get(item.参数名称).set(item.任务代号,[[new Date('item.测量时间'),item.参数值],...chartDataArray])
+                               draftState.paramMap.get(item.参数名称).set(item.任务代号,[[new Date(item.测量时间),item.参数值],...chartDataArray])
                            }else{
-                               draftState.paramMap.get(item.参数名称).get(item.任务代号).push([new Date('item.测量时间'),item.参数值])
+                               draftState.paramMap.get(item.参数名称).get(item.任务代号).push([new Date(item.测量时间),item.参数值])
                            }
                        }else{
-                           draftState.paramMap.get(item.参数名称).set(item.任务代号,[[new Date('item.测量时间'),item.参数值]])
+                           draftState.paramMap.get(item.参数名称).set(item.任务代号,[[new Date(item.测量时间),item.参数值]])
                        }
                     }else {
                        let taskcodeMap:ItaskCodeMap=new Map();
-                       taskcodeMap.set(item.任务代号,[[new Date('item.测量时间'),item.参数值]])
+                       taskcodeMap.set(item.任务代号,[[new Date(item.测量时间),item.参数值]])
                        draftState.paramMap.set(item.参数名称,taskcodeMap)
                    }
                 })
