@@ -1,0 +1,151 @@
+/**
+ *
+ * Card.scss 文件作用
+ * $author hurong<353486474$QQ.COM>
+ * $date 2018/6/2
+ *
+ * $内容 作用
+ * $内容 作用
+ */
+@import '../../assets/styles/Themes';
+$ant-prefix             : "ant";
+$card-prefix-cls:"#{$ant-prefix}-card";
+$card-head-height: 48px;
+$card-border-color: $Primary-Border-Color;
+$card-hover-border: rgba(0, 0, 0, 0.09);
+.#{$card-prefix-cls} {
+  color:$SecondaryColor;
+  background: $Primary-Color;
+&-hoverable {
+  cursor: pointer;
+  &:hover {
+    box-shadow: $card-shadow;
+    border-color: $card-border-color;
+  }
+}
+
+&-bordered {
+  border: $border-width-base $border-style-base $card-border-color;
+}
+
+&-head {
+  background: $Primary-Color;
+  border-bottom: $border-width-base $border-style-base $card-border-color;
+
+
+  &-title {
+    color: lighten($SecondaryColor,0%);
+  }
+
+  .#{$ant-prefix}-tabs {
+                  &-bar {
+                    border-bottom: $border-width-base $border-style-base $card-border-color;
+                  }
+                }
+}
+
+&-grid {
+  border-radius: 0;
+  border: 0;
+  box-shadow: 1px 0 0 0 lighten($SecondaryColor,0%), 0 1px 0 0 lighten($SecondaryColor,0%), 1px 1px 0 0 lighten($SecondaryColor,0%), 1px 0 0 0 lighten($SecondaryColor,0%) inset, 0 1px 0 0 lighten($SecondaryColor,0%) inset;
+  width: 33.33%;
+  float: left;
+  padding: $card-padding-base;
+  transition: all .3s;
+
+}
+
+
+&-actions {
+  border-top: $border-width-base $border-style-base $card-border-color;
+  background: $card-actions-background;
+
+  & > li {
+
+    color: lighten($SecondaryColor,0%);
+
+
+      &:hover {
+        color: lighten($SecondaryColor,0%);
+        transition: color .3s;
+      }
+
+
+      a {
+        color: lighten($SecondaryColor,0%);
+        line-height: 22px;
+        display: inline-block;
+        width: 100%;
+
+        &:hover {
+          color: lighten($SecondaryColor,0%);
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      border-right: $border-width-base $border-style-base lighten($SecondaryColor,0%);
+    }
+  }
+
+
+
+&-type-inner &-head {
+  padding: 0 $card-padding-base;
+  background: $background-color-light;
+
+  &-title {
+    padding: $card-inner-head-padding 0;
+    font-size: $font-size-base;
+  }
+}
+
+&-type-inner &-body {
+  padding: 16px $card-padding-base;
+}
+
+&-type-inner &-extra {
+  padding: $card-inner-head-padding + 1.5px 0;
+}
+
+&-meta {
+  margin: -4px 0;
+  .clearfix;
+
+  &-avatar {
+    padding-right: 16px;
+    float: left;
+  }
+
+  &-detail {
+    overflow: hidden;
+    > div:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &-title {
+    font-size: $font-size-lg;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: $card-head-color;
+    font-weight: 500;
+  }
+
+  &-description {
+    color: $text-color-secondary;
+  }
+}
+
+}
+
+$keyframes card-loading {
+  0%,
+  100% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

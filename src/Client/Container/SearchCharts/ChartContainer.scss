@@ -1,0 +1,28 @@
+/**
+ *
+ * ChartContainer.scss 文件作用
+ * @author hurong<353486474@QQ.COM>
+ * @date 2018/6/4
+ *
+ * @内容 作用
+ * @内容 作用
+ */
+.ChartContainer{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+.ChartItem{
+  width: calc(50% - 10px);
+  min-width: 500px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+  &::after{
+    content: '';
+    display: block;
+    margin-top: 60%; //margin 百分比相对父元素宽度计算
+  }
+}

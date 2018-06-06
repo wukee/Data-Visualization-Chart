@@ -1,0 +1,25 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions"
+          ]
+        },
+        "shippedProposals": true,
+        "modules": false,
+        "useBuiltIns": "entry",
+        "loose": true
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    ["import", { "libraryName": "antd", "style": "css" }],
+    ["@babel/plugin-proposal-decorators",{"legacy":true}],
+    ["@babel/plugin-proposal-class-properties", { "loose" : true }]
+  ]
+}

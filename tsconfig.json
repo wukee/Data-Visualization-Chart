@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "outDir": "./built/",
+        "sourceMap": true,
+        "module": "es6",
+        "types":["node"],
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noImplicitAny": false,
+        "target": "es6",
+        "jsx":"react",
+        "allowSyntheticDefaultImports":true,
+        "allowJs": true,
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "es7",
+            "es6",
+            "ScriptHost"
+        ]
+    },
+    "include": [
+        "./src/Model/**/*",
+        "./src/Server/**/*",
+        "./typing/declarations.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

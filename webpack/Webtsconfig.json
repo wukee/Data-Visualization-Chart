@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "outDir": "./built/",
+        "sourceMap": true,
+        "module": "es6",
+        "types":["node"],
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noImplicitAny": false,
+        "target": "es6",
+        "jsx": "react",
+        "allowSyntheticDefaultImports":true,
+        "allowJs": true,
+        "lib": [
+            "es6",
+            "es7",
+            "dom",
+            "DOM.Iterable",
+            "ScriptHost"
+        ]
+    },
+    "awesomeTypescriptLoaderOptions": {
+        "useWebpackText": true,
+        "forkChecker": true
+    },
+    "include": [
+        "../src/Client/**/*",
+        "../src/Model/**/*",
+        "../typing/declarations.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "../src/Server/**/*"
+    ]
+}

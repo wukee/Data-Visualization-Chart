@@ -1,0 +1,91 @@
+/**
+ *
+ * C3SearchTable.scss 文件作用
+ * @author hurong<353486474@QQ.COM>
+ * @date 2018/6/3
+ *
+ * @内容 作用
+ * @内容 作用
+ */
+@import '../../assets/styles/Themes.scss';
+table_panel{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  margin-bottom: 18px;
+}
+.alldata, .selecteddata {
+  width: 100px;
+  height: 30px;
+  background-image: url("../../assets/Images/_03.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+}
+.alldata:hover, .selecteddata:hover {
+  width: 100px;
+  height: 30px;
+  border:none;
+  background: url("../../assets/Images/所有数据.png") no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  font-size: 14px;
+}
+.selectbutton {
+  display: inline-flex;
+  width: 80px;
+  height: 30px;
+  background: url("../../assets/Images/图标底色2.png") no-repeat;
+  background-size: 100% 100%;
+}
+.refresh {
+  height: 30px;
+  width: 36px;
+  background: url("../../assets/Images/图标3.png") no-repeat center center;
+  background-size: 40% 40%;
+}
+.option {
+  height: 30px;
+  width: 44px;
+  background: url("../../assets/Images/图标4.png") no-repeat center center;
+  background-size: 50% 40%;
+}
+#tb_histData {
+  border: 1px solid #0a64c4;
+  width: 100%;
+  padding:0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 auto;
+  color: $SecondaryColor;
+  font-size: 14px;
+  text-align: center;
+}
+#tb_histData  tr, th,td {
+  padding: 10px;
+}
+#tb_histData tr td {
+  border: none;
+  outline: 1px solid #0b64c4;
+  background-color: #0a2752;
+}
+#tb_histData th {
+  border-bottom: none;
+}
+.navigationbar {
+  border-right: 1px solid $SecondaryColor;
+  border-left: 1px solid $SecondaryColor;
+  background-image: url("../../assets/Images/导航栏.png");
+  background-size: 100% 100%;
+}
+input[type="checkbox"] {
+  //-webkit-appearance: none;
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+  border: 1px solid $SecondaryColor;
+}

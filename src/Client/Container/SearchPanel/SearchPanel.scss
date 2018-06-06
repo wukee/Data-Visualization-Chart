@@ -1,0 +1,88 @@
+/**
+ *
+ * SearchPanel.scss 文件作用
+ * @author hurong<353486474@QQ.COM>
+ * @date 2018/6/2
+ *
+ * @内容 作用
+ * @内容 作用
+ */
+@import '../../assets/styles/Themes';
+.search_panel{
+  background-image:url("../../assets/Images/框.png");
+  padding: 15px 45px;
+  height:160px;
+  margin-bottom: 55px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.formSearch_gap{
+  width: 60px;
+  height: 100%;
+}
+.searchPanel_title{
+  color: $SecondaryColor;
+  font-size: 20px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+}
+.form-horizontal{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: stretch;
+  color: $SecondaryColor;
+  font-size: 14px;
+}
+.form-group{
+  display: flex;
+}
+.col-lg-1,.col-lg-7,.col-lg-5{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.form-group{
+  width: 100%;
+  margin: 10px auto;
+}
+.control-label, .col-lg-5{
+  margin: auto 10px;
+}
+.ncse_input {
+  height: 20px;
+  width: 163px;
+  background-image: url("../../assets/Images/_03.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.glyphicon-remove{
+  height: 22px;
+  width: 26px;
+  background: url("../../assets/images/图标底色1.png") no-repeat, url("../../assets/Images/图标1.png") no-repeat center center;
+  background-size: 100% 100%, 35% 43%;
+
+}
+.glyphicon-calendar{
+  height: 22px;
+  width: 26px;
+  background: url("../../assets/images/图标底色1.png") no-repeat, url("../../assets/Images/图标2.png") no-repeat center center;
+  background-size: 100% 100%, 35% 43%;
+}
+.btn{
+  margin-left:8px;
+  width: 80px;
+  height: 24px;
+  border:none;
+  background: url("../../assets/images/查询.png") no-repeat;
+  background-size: 100% 100%;
+  color: $default-color;
+  font-size: 14px;
+}

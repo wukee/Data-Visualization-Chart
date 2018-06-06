@@ -1,0 +1,34 @@
+/**
+ *
+ * Header.scss 文件作用
+ * @author hurong<353486474@QQ.COM>
+ * @date 2018/6/2
+ *
+ * @内容 作用
+ * @内容 作用
+ */
+@import '../../assets/styles/Themes';
+.tab_panel{
+  width: 100%;
+  height: 80px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid $Primary-Border-Color;
+  display: flex;
+  align-items:flex-end;
+}
+.tab_btn{
+  color:$SecondaryColor;
+  height:40px;
+  width: 172px;
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 5px;
+  background: url("../../assets/Images/故障数据.png") no-repeat;
+
+}
+.tab_btn:hover{
+  color:$default-color;
+  background: url("../../assets/Images/历史数据.png") no-repeat ;
+}

@@ -1,0 +1,49 @@
+@import "../../assets/styles/Themes";
+$calendar-prefix-cls:'ant-calendar';
+$ant-prefix:'ant';
+
+.#{$calendar-prefix-cls}-picker {
+.ant-calendar-range-picker-separator{
+  color:$default-color;
+}
+                       &-input{
+                         color:$default-color;
+                         border: none;
+                         border-radius: 0;
+                         background: url("../../assets/Images/_03.png")  no-repeat;
+                         background-size:100% 100% ;
+                       }
+                         &:hover &-input:not(.#{$ant-prefix}-input-disabled) {
+                         border-color: $Primary-Border-Color;
+                       }
+                         &-clear {
+                           opacity: 0;
+                           z-index: 1;
+                           background: transparent;
+                           pointer-events: none;
+                           cursor: pointer;
+                           &:hover {
+                             color: transparent;
+                           }
+                         }
+
+                         &:hover &-clear {
+                           opacity: 1;
+                           pointer-events: auto;
+                           color: $default-color;
+                           background-color: $Primary-Color;
+                         }
+
+                         &-icon {
+                           color: $default-color;
+                           &:after {
+                             content: "\e6bb";
+                             font-family: "anticon";
+                             font-size: 14px;
+                             color: $default-color;
+                             display: inline-block;
+                             line-height: 1;
+                           }
+                         }
+
+                       }
