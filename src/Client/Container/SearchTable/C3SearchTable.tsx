@@ -30,7 +30,7 @@ class C3SearchTableComponent extends PureComponent <orderProps, any> {
                         }}>所有数据</button>
                         <HisdataContext.Consumer >
                             {(context:IHisDataContext)=><button className="selecteddata" onClick={()=>{
-
+                            context.sortCheckedDataByTimeAndType()
                             }}>选中数据</button>}
                         </HisdataContext.Consumer>
                     </div>

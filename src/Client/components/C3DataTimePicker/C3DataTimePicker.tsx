@@ -14,13 +14,15 @@ import {DatePicker} from 'antd'
 import './C3DataTimePicker.scss'
 const {RangePicker} = DatePicker
 interface orderProps {
-
+  onchange:(datastrings:Array<string>)=>any
 }
 
 class C3DataTimePickerComponent extends PureComponent <orderProps, any> {
     render() {
         return (
-            <RangePicker size={"small"}>
+            <RangePicker size={"small"} onChange={(dates, dateStrings)=>{
+                this.props.onchange(dateStrings);
+            }}>
             </RangePicker>
         )
     }

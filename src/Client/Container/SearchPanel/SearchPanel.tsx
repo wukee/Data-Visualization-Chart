@@ -21,6 +21,20 @@ interface orderProps {
 }
 
 class SearchPanelComponent extends PureComponent <orderProps, any> {
+    taskcodeInput:HTMLInputElement;
+    paramNameInput:HTMLInputElement;
+    measureTimeFrom:string;
+    measureTimeTo:string;
+    constructor(props){
+        super(props);
+        this.measureTimeFrom='';
+        this.measureTimeTo='';
+        this.onDatePickChange=this.onDatePickChange.bind(this);
+    }
+    onDatePickChange(pickDate){
+        this.measureTimeFrom=pickDate[0];
+        this.measureTimeTo=pickDate[1];
+    }
     render() {
         return (
             <div className="search_panel">
@@ -34,14 +48,14 @@ class SearchPanelComponent extends PureComponent <orderProps, any> {
                         </div>
                         <div className="formSearch_gap"></div>
                         <label className="ncse_input_label control-label col-sm-1"
-                               htmlFor="txt_search_statu">文件名称:</label>
+                               htmlFor="txt_search_statu">参数名称:</label>
                         <div className="col-sm-3">
                             <input type="text" className="ncse_input" id="txt_search_statu"/>
                         </div>
                     </div>
                     <div className="form-group form-inline">
                         <label className="control-label col-lg-1">存档时间:</label>
-                        <C3DataTimePicker></C3DataTimePicker>
+                        <C3DataTimePicker onchange={this.onDatePickChange}></C3DataTimePicker>
                         {/*<div className="col-lg-7">从*/}
                             {/*<div className="input-group date form_date col-lg-5" data-date-format="yyyy-mm-dd"*/}
                                  {/*data-link-field="dtp_input1">*/}
@@ -69,7 +83,7 @@ class SearchPanelComponent extends PureComponent <orderProps, any> {
                             {(context:IHisDataContext)=>
                                 <button type="button" id="btn_query" onClick={()=>{
                                     //todo 修改查询方法
-                                    context.updateHisdata()
+                                    context.updateHisdata(this.measureTimeFrom,this.measureTimeTo,this.taskcodeInput.value,this.paramNameInput.value)
                                 }} className="btn btn-primary col-lg-1">
                                     查询
                                 </button>

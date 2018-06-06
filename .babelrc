@@ -20,6 +20,12 @@
     "react-hot-loader/babel",
     ["import", { "libraryName": "antd", "style": "css" }],
     ["@babel/plugin-proposal-decorators",{"legacy":true}],
-    ["@babel/plugin-proposal-class-properties", { "loose" : true }]
+    ["@babel/plugin-proposal-class-properties", { "loose" : true }],
+    ["@babel/plugin-transform-runtime", {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true,
+      "moduleName": "@babel/runtime"
+    }]
   ]
 }

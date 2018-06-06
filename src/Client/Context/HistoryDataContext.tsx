@@ -43,9 +43,10 @@ export interface IHisDataContextState{
 
 export interface IHisDataContext{
     data:IHisDataContextState,
-    updateHisdata:()=>any
+    updateHisdata:(measuretimeFrom?:string,measureTime_to?:string,code?:string,paramName?:string)=>any
     updateOneHisDataCheckedStatus:(index:number)=>any
     updateAllHisDataCheckedStatus:()=>any
+    sortCheckedDataByTimeAndType:()=>any
 }
 export interface IHistoryData{
     '任务代号':ItaskCode,
@@ -65,6 +66,7 @@ export class HisDataContextProvider extends React.PureComponent<any,IHisDataCont
         this.updateHisdata = this.updateHisdata.bind(this);
         this.updateOneHisDataCheckedStatus=this.updateOneHisDataCheckedStatus.bind(this);
         this.updateAllHisDataCheckedStatus=this.updateAllHisDataCheckedStatus.bind(this);
+        this.sortCheckedDataByTimeAndType=this.sortCheckedDataByTimeAndType.bind(this)
     }
     async updateHisdata(measuretimeFrom,measureTime_to,code,paramName) {
         try{
@@ -76,11 +78,11 @@ export class HisDataContextProvider extends React.PureComponent<any,IHisDataCont
            },
            responseType:'json',
            data:{
-               limit:'',
-               'measuretime_from':'',
-               'measuretime_to':'',
-               '任务代号':'',
-               '参数名称':'',
+               limit:'500',
+               'measuretime_from':measuretimeFrom||'',
+               'measuretime_to':measureTime_to||'',
+               '任务代号':code||'',
+               '参数名称':paramName||'',
                offset:0
            }
        })
@@ -108,7 +110,7 @@ export class HisDataContextProvider extends React.PureComponent<any,IHisDataCont
                    if(draftState.paramMap.has(item.参数名称)){
                        if (draftState.paramMap.get(item.参数名称).has(item.任务代号)){
                            const insertIndex=draftState.paramMap.get(item.参数名称).get(item.任务代号).findIndex((Tupleitem:IChartDataTuple)=>{
-                               if(new Date(Tupleitem[0]).getTime()>new Date().getTime()){
+                               if(new Date(Tupleitem[0]).getTime()>new Date(item.测量时间).getTime()){
                                    return true
                                }
                                return false
